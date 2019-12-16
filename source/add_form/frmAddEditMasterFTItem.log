@@ -1,0 +1,18 @@
+Line 64: Class Xivess.uctlTextBox of control txtTo was not a loaded control class.
+Line 73: Class Xivess.uctlTextBox of control txtFrom was not a loaded control class.
+Line 82: Class Xivess.uctlTextBox of control txtValue1 was not a loaded control class.
+Line 91: Class Xivess.uctlTextBox of control txtValue2 was not a loaded control class.
+Line 100: Class Xivess.uctlTextBox of control txtValue3 was not a loaded control class.
+Line 19: Property Icon in frmAddEditMasterFTItem had an invalid file reference.
+Line 70: The property name _ExtentX in txtTo is invalid.
+Line 71: The property name _ExtentY in txtTo is invalid.
+Line 79: The property name _ExtentX in txtFrom is invalid.
+Line 80: The property name _ExtentY in txtFrom is invalid.
+Line 88: The property name _ExtentX in txtValue1 is invalid.
+Line 89: The property name _ExtentY in txtValue1 is invalid.
+Line 97: The property name _ExtentX in txtValue2 is invalid.
+Line 98: The property name _ExtentY in txtValue2 is invalid.
+Line 106: The property name _ExtentX in txtValue3 is invalid.
+Line 107: The property name _ExtentY in txtValue3 is invalid.
+Line 338: Property MouseIcon in cmdNext had an invalid file reference.
+Line 351: Property MouseIcon in cmdOK had an invalid file reference.

@@ -1,0 +1,72 @@
+Line 17: Class Threed.SSFrame of control SSFrame1 was not a loaded control class.
+Line 27: Class Threed.SSPanel of control pnlHeader was not a loaded control class.
+Line 38: Class GridEX20.GridEX of control GridEX1 was not a loaded control class.
+Line 78: Class Threed.SSCommand of control cmdDelete was not a loaded control class.
+Line 91: Class Threed.SSCommand of control cmdAdd was not a loaded control class.
+Line 104: Class Threed.SSCommand of control cmdEdit was not a loaded control class.
+Line 115: Class Threed.SSCommand of control cmdExit was not a loaded control class.
+Line 127: Class Threed.SSCommand of control cmdOK was not a loaded control class.
+Line 23: The property name _ExtentX in SSFrame1 is invalid.
+Line 24: The property name _ExtentY in SSFrame1 is invalid.
+Line 25: The property name _Version in SSFrame1 is invalid.
+Line 26: The property name PictureBackgroundStyle in SSFrame1 is invalid.
+Line 33: The property name _ExtentX in pnlHeader is invalid.
+Line 34: The property name _ExtentY in pnlHeader is invalid.
+Line 35: The property name _Version in pnlHeader is invalid.
+Line 36: The property name PictureBackgroundStyle in pnlHeader is invalid.
+Line 44: The property name _ExtentX in GridEX1 is invalid.
+Line 45: The property name _ExtentY in GridEX1 is invalid.
+Line 46: The property name Version in GridEX1 is invalid.
+Line 47: The property name BoundColumnIndex in GridEX1 is invalid.
+Line 48: The property name ReplaceColumnIndex in GridEX1 is invalid.
+Line 49: The property name TabKeyBehavior in GridEX1 is invalid.
+Line 50: The property name MethodHoldFields in GridEX1 is invalid.
+Line 51: The property name AllowColumnDrag in GridEX1 is invalid.
+Line 52: The property name AllowEdit in GridEX1 is invalid.
+Line 54: The property name GroupByBoxVisible in GridEX1 is invalid.
+Line 55: The property name DataMode in GridEX1 is invalid.
+Line 56: The property name HeaderFontName in GridEX1 is invalid.
+Line 57: The property name HeaderFontBold in GridEX1 is invalid.
+Line 58: The property name HeaderFontSize in GridEX1 is invalid.
+Line 59: The property name HeaderFontWeight in GridEX1 is invalid.
+Line 61: The property name BackColorBkg in GridEX1 is invalid.
+Line 62: The property name ColumnHeaderHeight in GridEX1 is invalid.
+Line 63: The property name IntProp1 in GridEX1 is invalid.
+Line 64: The property name IntProp2 in GridEX1 is invalid.
+Line 65: The property name IntProp7 in GridEX1 is invalid.
+Line 66: The property name ColumnsCount in GridEX1 is invalid.
+Line 67: The property name Column(1) in GridEX1 is invalid.
+Line 68: The property name Column(2) in GridEX1 is invalid.
+Line 69: The property name FormatStylesCount in GridEX1 is invalid.
+Line 70: The property name FormatStyle(1) in GridEX1 is invalid.
+Line 71: The property name FormatStyle(2) in GridEX1 is invalid.
+Line 72: The property name FormatStyle(3) in GridEX1 is invalid.
+Line 73: The property name FormatStyle(4) in GridEX1 is invalid.
+Line 74: The property name FormatStyle(5) in GridEX1 is invalid.
+Line 75: The property name ImageCount in GridEX1 is invalid.
+Line 76: The property name PrinterProperties in GridEX1 is invalid.
+Line 38: Property BorderStyle in GridEX1 could not be set.
+Line 84: The property name _ExtentX in cmdDelete is invalid.
+Line 85: The property name _ExtentY in cmdDelete is invalid.
+Line 86: The property name _Version in cmdDelete is invalid.
+Line 89: The property name ButtonStyle in cmdDelete is invalid.
+Line 78: Property MouseIcon in cmdDelete could not be set.
+Line 97: The property name _ExtentX in cmdAdd is invalid.
+Line 98: The property name _ExtentY in cmdAdd is invalid.
+Line 99: The property name _Version in cmdAdd is invalid.
+Line 102: The property name ButtonStyle in cmdAdd is invalid.
+Line 91: Property MouseIcon in cmdAdd could not be set.
+Line 110: The property name _ExtentX in cmdEdit is invalid.
+Line 111: The property name _ExtentY in cmdEdit is invalid.
+Line 112: The property name _Version in cmdEdit is invalid.
+Line 113: The property name ButtonStyle in cmdEdit is invalid.
+Line 116: The property name Cancel in cmdExit is invalid.
+Line 122: The property name _ExtentX in cmdExit is invalid.
+Line 123: The property name _ExtentY in cmdExit is invalid.
+Line 124: The property name _Version in cmdExit is invalid.
+Line 125: The property name ButtonStyle in cmdExit is invalid.
+Line 133: The property name _ExtentX in cmdOK is invalid.
+Line 134: The property name _ExtentY in cmdOK is invalid.
+Line 135: The property name _Version in cmdOK is invalid.
+Line 138: The property name ButtonStyle in cmdOK is invalid.
+Line 127: Property MouseIcon in cmdOK could not be set.

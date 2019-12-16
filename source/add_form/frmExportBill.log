@@ -1,0 +1,4 @@
+Line 11: Property Icon in frmExportSupItem had an invalid file reference.
+Line 99: Property Picture in ListImage1 had an invalid file reference.
+Line 123: Property MouseIcon in cmdStart had an invalid file reference.
+Line 192: Property MouseIcon in cmdOK had an invalid file reference.

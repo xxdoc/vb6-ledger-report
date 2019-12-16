@@ -1,0 +1,19 @@
+Line 27: Class Xivess.uctlDate of control uctlToDate was not a loaded control class.
+Line 103: Class Xivess.uctlDate of control uctlFromDate was not a loaded control class.
+Line 4: Property Icon in frmMasterFromTo could not be set.
+Line 33: The property name _ExtentX in uctlToDate is invalid.
+Line 34: The property name _ExtentY in uctlToDate is invalid.
+Line 92: Property Column(1) in GridEX1 had an invalid file reference.
+Line 93: Property Column(2) in GridEX1 had an invalid file reference.
+Line 95: Property FormatStyle(1) in GridEX1 had an invalid file reference.
+Line 96: Property FormatStyle(2) in GridEX1 had an invalid file reference.
+Line 97: Property FormatStyle(3) in GridEX1 had an invalid file reference.
+Line 98: Property FormatStyle(4) in GridEX1 had an invalid file reference.
+Line 99: Property FormatStyle(5) in GridEX1 had an invalid file reference.
+Line 101: Property PrinterProperties in GridEX1 had an invalid file reference.
+Line 109: The property name _ExtentX in uctlFromDate is invalid.
+Line 110: The property name _ExtentY in uctlFromDate is invalid.
+Line 158: Property MouseIcon in cmdSearch had an invalid file reference.
+Line 182: Property MouseIcon in cmdDelete had an invalid file reference.
+Line 195: Property MouseIcon in cmdAdd had an invalid file reference.
+Line 231: Property MouseIcon in cmdOK had an invalid file reference.

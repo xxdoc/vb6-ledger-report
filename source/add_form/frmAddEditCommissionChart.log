@@ -1,0 +1,12 @@
+Line 36: Class Xivess.uctlTextLookup of control uctlEmployeeLookUp was not a loaded control class.
+Line 45: Class Xivess.uctlTextLookup of control uctlCommissionSale was not a loaded control class.
+Line 54: Class Xivess.uctlTextLookup of control uctlCommissionReturn was not a loaded control class.
+Line 63: Class Xivess.uctlTextBox of control txtOrderID was not a loaded control class.
+Line 42: The property name _ExtentX in uctlEmployeeLookUp is invalid.
+Line 43: The property name _ExtentY in uctlEmployeeLookUp is invalid.
+Line 51: The property name _ExtentX in uctlCommissionSale is invalid.
+Line 52: The property name _ExtentY in uctlCommissionSale is invalid.
+Line 60: The property name _ExtentX in uctlCommissionReturn is invalid.
+Line 61: The property name _ExtentY in uctlCommissionReturn is invalid.
+Line 69: The property name _ExtentX in txtOrderID is invalid.
+Line 70: The property name _ExtentY in txtOrderID is invalid.

@@ -1,0 +1,12 @@
+Line 73: Class Xivess.uctlDate of control uctlFromDate was not a loaded control class.
+Line 82: Class Xivess.uctlTextBox of control txtMasterFromToNo was not a loaded control class.
+Line 91: Class Xivess.uctlTextBox of control txtMasterFromToDesc was not a loaded control class.
+Line 100: Class Xivess.uctlDate of control uctlToDate was not a loaded control class.
+Line 79: The property name _ExtentX in uctlFromDate is invalid.
+Line 80: The property name _ExtentY in uctlFromDate is invalid.
+Line 88: The property name _ExtentX in txtMasterFromToNo is invalid.
+Line 89: The property name _ExtentY in txtMasterFromToNo is invalid.
+Line 97: The property name _ExtentX in txtMasterFromToDesc is invalid.
+Line 98: The property name _ExtentY in txtMasterFromToDesc is invalid.
+Line 106: The property name _ExtentX in uctlToDate is invalid.
+Line 107: The property name _ExtentY in uctlToDate is invalid.

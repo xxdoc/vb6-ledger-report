@@ -1,0 +1,9 @@
+Line 52: Class Xivess.uctlTextBox of control txtEmpName was not a loaded control class.
+Line 112: Class Xivess.uctlTextBox of control txtEmpCode was not a loaded control class.
+Line 121: Class Xivess.uctlTextBox of control txtLastName was not a loaded control class.
+Line 58: The property name _ExtentX in txtEmpName is invalid.
+Line 59: The property name _ExtentY in txtEmpName is invalid.
+Line 118: The property name _ExtentX in txtEmpCode is invalid.
+Line 119: The property name _ExtentY in txtEmpCode is invalid.
+Line 127: The property name _ExtentX in txtLastName is invalid.
+Line 128: The property name _ExtentY in txtLastName is invalid.
