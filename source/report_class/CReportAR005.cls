@@ -63,6 +63,8 @@ Private m_DbnCdnByBills As Collection
 Private m_RealCreditDocColl As Collection
 Private m_RealCreditCusColl As Collection
 Private m_CnAllAmounts As Collection
+Private m_CustomerTypes As Collection
+
 Private Sub Class_Initialize()
    Set mcolParam = New Collection
    Set m_TempCol = New Collection
@@ -83,6 +85,7 @@ Private Sub Class_Initialize()
    Set m_RealCreditDocColl = New Collection
    Set m_RealCreditCusColl = New Collection
    Set m_CnAllAmounts = New Collection
+   Set m_CustomerTypes = New Collection
    
    Set m_ReceiveFutureAmounts = New Collection
    Set ColProvinceMap = New Collection
@@ -110,6 +113,7 @@ Private Sub Class_Terminate()
    Set m_RealCreditDocColl = Nothing
    Set m_RealCreditCusColl = Nothing
    Set m_CnAllAmounts = Nothing
+   Set m_CustomerTypes = Nothing
    
    Set m_ReceiveFutureAmounts = Nothing
 End Sub
@@ -523,6 +527,7 @@ Dim ToPaidDate As String
       Call LoadDueDateInterval2(Nothing, m_MaxMins)
    End If
    
+   Call LoadCustomerType(Nothing, m_CustomerTypes)
    Call LoadARCNAmountByBill(Nothing, m_CnAllAmounts, DateAdd("D", 1, mcolParam("TO_DOC_DATE")), -1, -1, mcolParam("TO_DOC_DATE"))         'ต้องบวกยอดยกมาเพิ่ม ยอด CN ทั้งหมดของบิลหลัง CN แต่ เอกสาร LINK เป็นในช่วงยกมา
    
    FromDate = "จากวันที่ " & EmptyToString(DateToStringExtEx2(mcolParam("FROM_DOC_DATE")), "N/A")
@@ -906,6 +911,13 @@ Dim TempRealCredit As CRealCredit
             ARt.FROM_DOC_DATE = mcolParam("FROM_DOC_DATE")
             ARt.TO_DOC_DATE = mcolParam("TO_DOC_DATE")
             
+            If mcolParam("CUSTOMER_TYPE") > 0 Then
+               Set St = GetItemFromListIndex(m_CustomerTypes, mcolParam("CUSTOMER_TYPE"))
+               ARt.CUSTYP = St.TYPCOD
+            Else
+               ARt.CUSTYP = ""
+            End If
+      
             ARt.FROM_CUSTOMER_CODE = mcolParam("FROM_CUSTOMER_CODE")
             ARt.TO_CUSTOMER_CODE = mcolParam("TO_CUSTOMER_CODE")
             

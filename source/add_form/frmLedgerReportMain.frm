@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#2.0#0"; "THREED20.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmLedgerReportMain 
    ClientHeight    =   9495
    ClientLeft      =   60
@@ -357,17 +357,12 @@ Private m_TextLookups As Collection
 Private m_Dates As Collection
 Private m_CheckBoxes As Collection
 Private m_Labels As Collection
-
 Private m_Combos As Collection
-
 Private m_ReportParams As Collection
 Private m_FromDate As Date
 Private m_ToDate As Date
 Private m_DBPath As String
-
 Private m_Journals As Collection      'Step 1
-
-
 
 Private Sub cmdAdd_Click()
 Dim OKClick As Boolean
@@ -3507,11 +3502,21 @@ Dim YEAR_ID As Long
          If trvMain.SelectedItem.KEY = ROOT_TREE & " 1-0-6" Then
             If C.ComboLoadID = 1 Then
                Call InitIntervalType(m_Combos(C.ControlIndex))
+            ElseIf C.ComboLoadID = 2 Then
+               Call LoadCustomerType(m_Combos(C.ControlIndex))
+            End If
+         End If
+         
+      If trvMain.SelectedItem.KEY = ROOT_TREE & " 1-0-6-1" Then
+            If C.ComboLoadID = 1 Then
+               Call LoadCustomerType(m_Combos(C.ControlIndex))
             End If
          End If
          
          If trvMain.SelectedItem.KEY = ROOT_TREE & " 1-0-6-2" Then
-            If C.ComboLoadID = 2 Then
+            If C.ComboLoadID = 1 Then
+               Call LoadCustomerType(m_Combos(C.ControlIndex))
+            ElseIf C.ComboLoadID = 2 Then
                Call InitSaleOrderBy(m_Combos(C.ControlIndex))
             ElseIf C.ComboLoadID = 3 Then
                Call InitOrderType(m_Combos(C.ControlIndex))
@@ -3519,7 +3524,9 @@ Dim YEAR_ID As Long
          End If
          
          If trvMain.SelectedItem.KEY = ROOT_TREE & " 1-0-6-3" Then
-            If C.ComboLoadID = 2 Then
+             If C.ComboLoadID = 1 Then
+               Call LoadCustomerType(m_Combos(C.ControlIndex))
+            ElseIf C.ComboLoadID = 2 Then
                Call InitSaleOrderBy(m_Combos(C.ControlIndex))
             ElseIf C.ComboLoadID = 3 Then
                Call InitOrderType(m_Combos(C.ControlIndex))
@@ -3530,8 +3537,10 @@ Dim YEAR_ID As Long
             If C.ComboLoadID = 1 Then
                Call InitThaiMonth(m_Combos(C.ControlIndex))
             ElseIf C.ComboLoadID = 2 Then
-               Call InitSaleOrderBy(m_Combos(C.ControlIndex))
+               Call LoadCustomerType(m_Combos(C.ControlIndex))
             ElseIf C.ComboLoadID = 3 Then
+               Call InitSaleOrderBy(m_Combos(C.ControlIndex))
+            ElseIf C.ComboLoadID = 4 Then
                Call InitOrderType(m_Combos(C.ControlIndex))
             End If
          End If
@@ -3845,6 +3854,9 @@ Dim Offset As Long
    Call LoadControl("D", uctlGenericDate(0).Width, True, "", , "PRINT_DATE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("วันที่พิมพ์"))
    
+   Call LoadControl("CB", cboGeneric(0).Width, True, "", 2, "CUSTOMER_TYPE")
+   Call LoadControl("L", lblGeneric(0).Width, True, MapText("ประเภทลูกหนี้"))
+   
    '1 =============================
    Call LoadControl("T", txtGeneric(0).Width / 2, True, "", , "FROM_CUSTOMER_CODE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("รหัสลูกหนี้"))
@@ -3928,6 +3940,9 @@ Dim Offset As Long
    Call LoadControl("D", uctlGenericDate(0).Width, True, "", , "PRINT_DATE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("วันที่พิมพ์"))
    
+   Call LoadControl("CB", cboGeneric(0).Width, True, "", 1, "CUSTOMER_TYPE")
+   Call LoadControl("L", lblGeneric(0).Width, True, MapText("ประเภทลูกหนี้"))
+   
    '1 =============================
    Call LoadControl("T", txtGeneric(0).Width / 1.5, True, "", , "FROM_CUSTOMER_CODE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("จากรหัสลูกหนี้"))
@@ -3978,6 +3993,9 @@ Dim Offset As Long
    '1 =============================
    Call LoadControl("D", uctlGenericDate(0).Width, True, "", , "PRINT_DATE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("วันที่พิมพ์"))
+   
+   Call LoadControl("CB", cboGeneric(0).Width, True, "", 1, "CUSTOMER_TYPE")
+   Call LoadControl("L", lblGeneric(0).Width, True, MapText("ประเภทลูกหนี้"))
    
    '1 =============================
    Call LoadControl("T", txtGeneric(0).Width / 1.5, True, "", , "FROM_CUSTOMER_CODE")
@@ -4052,6 +4070,9 @@ Dim Offset As Long
    '1 =============================
    Call LoadControl("D", uctlGenericDate(0).Width, True, "", , "PRINT_DATE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("วันที่พิมพ์"))
+   
+   Call LoadControl("CB", cboGeneric(0).Width, True, "", 1, "CUSTOMER_TYPE")
+   Call LoadControl("L", lblGeneric(0).Width, True, MapText("ประเภทลูกหนี้"))
    
    '1 =============================
    Call LoadControl("T", txtGeneric(0).Width / 1.5, True, "", , "FROM_CUSTOMER_CODE")
@@ -4130,6 +4151,9 @@ Dim Offset As Long
    Call LoadControl("D", uctlGenericDate(0).Width, True, "", , "PRINT_DATE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("วันที่พิมพ์"))
    
+   Call LoadControl("CB", cboGeneric(0).Width, True, "", 2, "CUSTOMER_TYPE")
+   Call LoadControl("L", lblGeneric(0).Width, True, MapText("ประเภทลูกหนี้"))
+   
    '1 =============================
    Call LoadControl("T", txtGeneric(0).Width / 1.5, True, "", , "FROM_CUSTOMER_CODE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("จากรหัสลูกหนี้"))
@@ -4146,9 +4170,9 @@ Dim Offset As Long
    Call LoadControl("T", txtGeneric(0).Width / 1.5, True, "", , "TO_SALE_CODE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("ถึงรหัสพนักงานขาย"))
    '3 =============================
-   Call LoadControl("C", cboGeneric(0).Width, True, "", 2, "ORDER_BY")
+   Call LoadControl("C", cboGeneric(0).Width, True, "", 3, "ORDER_BY")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("เรียงตาม"))
-   Call LoadControl("C", cboGeneric(0).Width, True, "", 3, "ORDER_TYPE")
+   Call LoadControl("C", cboGeneric(0).Width, True, "", 4, "ORDER_TYPE")
    Call LoadControl("L", lblGeneric(0).Width, True, MapText("เรียงจาก"))
    
    Call LoadControl("T", txtGeneric(0).Width / 1.5, True, "", , "CREDIT")

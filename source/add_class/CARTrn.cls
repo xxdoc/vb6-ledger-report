@@ -35,6 +35,7 @@ Public RCVAMT As Double
 Public SONUM As String
 Public DISC As Double
 
+Public CUSTYP As String
 Public FROM_CUSTOMER_CODE As String
 Public TO_CUSTOMER_CODE As String
 Public FROM_SLM_CODE As String
@@ -269,6 +270,14 @@ Dim GroupByStr As String
          Else
             WhereStr = WhereStr & "AND (APT.CUSCOD = '" & ChangeQuote(Trim(CUSCOD)) & "')"
          End If
+      End If
+   End If
+   
+   If Len(CUSTYP) > 0 Then
+      If Len(WhereStr) <= 0 Then
+         WhereStr = "WHERE (APM.CUSTYP = '" & Trim(ChangeQuote(CUSTYP)) & "') "
+      Else
+         WhereStr = WhereStr & "AND (APM.CUSTYP = '" & Trim(ChangeQuote(CUSTYP)) & "') "
       End If
    End If
             

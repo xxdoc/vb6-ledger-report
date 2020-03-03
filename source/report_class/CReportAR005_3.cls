@@ -64,6 +64,7 @@ Private m_MaxMins As Collection
 Private m_DbnCdnByBills As Collection
 Private m_RealCreditColl As Collection
 Private m_CnAllAmounts As Collection
+Private m_CustomerTypes As Collection
 Dim collum As Long
 Private numj As Long
 
@@ -72,6 +73,7 @@ Dim TempCheckCancel As CCheckCancel
 'Dim ItemCount As Long
  Dim m_Rs As ADODB.Recordset
 Dim m_BktAmountForCheckInCancel As Collection
+
  
 
 Private Sub Class_Initialize()
@@ -96,6 +98,7 @@ Private Sub Class_Initialize()
    Set m_DbnCdnByBills = New Collection
    Set m_RealCreditColl = New Collection
    Set m_CnAllAmounts = New Collection
+   Set m_CustomerTypes = New Collection
 End Sub
 
 Private Sub Class_Terminate()
@@ -122,6 +125,7 @@ Private Sub Class_Terminate()
    Set m_DbnCdnByBills = Nothing
    Set m_RealCreditColl = Nothing
    Set m_CnAllAmounts = Nothing
+   Set m_CustomerTypes = Nothing
 End Sub
 
 Private Function CReportInterface_AddParam(varItem As Variant, strIndex As String) As Boolean
@@ -448,6 +452,7 @@ Dim iCount As Long
    
    Call ArrangeChq(m_BktAmountForCheckInCancel, m_ReceiveCancelitem, m_BkReceiveAmounts)
    
+   Call LoadCustomerType(Nothing, m_CustomerTypes)
    Call LoadReceiveAmountByBill(Nothing, m_ReceiveAllAmounts, -1, -1)
    Call LoadARCNAmountByBill(Nothing, m_CnAllAmounts, DateAdd("D", 1, mcolParam("TO_DOC_DATE")), -1, -1, mcolParam("TO_DOC_DATE"))         'ต้องบวกยอดยกมาเพิ่ม ยอด CN ทั้งหมดของบิลหลัง CN แต่ เอกสาร LINK เป็นในช่วงยกมา
    
@@ -853,6 +858,13 @@ Dim totSum As Double
             ARt.SLMCOD = Ar.SLMCOD
             ARt.FROM_DOC_DATE = mcolParam("FROM_DOC_DATE")
             ARt.TO_DOC_DATE = mcolParam("TO_DOC_DATE")
+            
+            If mcolParam("CUSTOMER_TYPE") > 0 Then
+               Set St = GetItemFromListIndex(m_CustomerTypes, mcolParam("CUSTOMER_TYPE"))
+               ARt.CUSTYP = St.TYPCOD
+            Else
+               ARt.CUSTYP = ""
+            End If
             
             ARt.FROM_CUSTOMER_CODE = mcolParam("FROM_CUSTOMER_CODE")
             ARt.TO_CUSTOMER_CODE = mcolParam("TO_CUSTOMER_CODE")

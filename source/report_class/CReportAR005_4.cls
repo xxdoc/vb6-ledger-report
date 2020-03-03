@@ -55,6 +55,7 @@ Private m_YearSeqs As Collection
 Private m_ReceiveAmounts As Collection
 Private m_ReceiveAllAmounts As Collection
 Private m_CnAllAmounts As Collection
+Private m_CustomerTypes As Collection
 Private Temp_AnalyzeCustomer As Collection
 Private FirstDate As Date
 Private LastDate As Date
@@ -77,6 +78,7 @@ Private Sub Class_Initialize()
    Set m_ReceiveAllAmounts = New Collection
    Set m_CnAllAmounts = New Collection
    Set Temp_AnalyzeCustomer = New Collection
+   Set m_CustomerTypes = New Collection
 End Sub
 Private Sub Class_Terminate()
    Call ClearParam
@@ -97,6 +99,7 @@ Private Sub Class_Terminate()
    Set m_ReceiveAllAmounts = Nothing
    Set m_CnAllAmounts = Nothing
    Set Temp_AnalyzeCustomer = Nothing
+   Set m_CustomerTypes = Nothing
 End Sub
 Private Function CReportInterface_AddParam(varItem As Variant, strIndex As String) As Boolean
    Call mcolParam.Add(varItem, strIndex)
@@ -271,6 +274,7 @@ Dim ToPaidDate As String
    Vsp.FontName = "AngsanaUPC"
    Vsp.FontSize = DETAIL_SIZE
    
+   Call LoadCustomerType(Nothing, m_CustomerTypes)
    Call LoadReceiveAmountByBill(Nothing, m_ReceiveAmounts, -1, -1)
    Call LoadReceiveAmountByBill(Nothing, m_ReceiveAllAmounts, -1, -1)
    Call LoadARCNAmountByBill(Nothing, m_CnAllAmounts, DateAdd("D", 1, mcolParam("TO_DOC_DATE")), -1, -1, mcolParam("TO_DOC_DATE"))         'ต้องบวกยอดยกมาเพิ่ม ยอด CN ทั้งหมดของบิลหลัง CN แต่ เอกสาร LINK เป็นในช่วงยกมา
@@ -406,6 +410,12 @@ Dim Sum As Double
             ARt.SLMCOD = Ar.SLMCOD
             ARt.FROM_DOC_DATE = mcolParam("FROM_DOC_DATE")
             ARt.TO_DOC_DATE = mcolParam("TO_DOC_DATE")
+            If mcolParam("CUSTOMER_TYPE") > 0 Then
+               Set St = GetItemFromListIndex(m_CustomerTypes, mcolParam("CUSTOMER_TYPE"))
+               ARt.CUSTYP = St.TYPCOD
+            Else
+               ARt.CUSTYP = ""
+            End If
             ARt.FROM_CUSTOMER_CODE = mcolParam("FROM_CUSTOMER_CODE")
             ARt.TO_CUSTOMER_CODE = mcolParam("TO_CUSTOMER_CODE")
             ARt.RECTYP = ""
